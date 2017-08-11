@@ -1,0 +1,3 @@
+Asif Faisal, asif@gmail.com, Male, 03-08-2017
+Bruce Wayne, wayne@batman.com, Male, 11-08-2017
+Clark Kent, Kent@superman.com, Male, 04-08-2017
