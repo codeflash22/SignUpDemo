@@ -8,7 +8,7 @@ package signupformmain;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
@@ -25,6 +25,43 @@ public class DatabaseFrame extends JFrame {
     public DatabaseFrame(){
         initComponents();
         DefaultTableModel dbTable = (DefaultTableModel)databaseTable.getModel();
+        
+        /*Map<Integer, User> userMap = new HashMap<Integer, User>();
+        try{
+            BufferedReader bReader = new BufferedReader(new FileReader("database.txt"));
+            String line;
+            String info[];
+            while((line = bReader.readLine())!=null){
+                info = line.split(",");
+                User data = new User(info[0],info[1],info[2],info[3]);
+                userMap.put(1, data);
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }*/
+        
+        /*HashSet<User> userSet = new HashSet<User>();
+        
+        try{
+            BufferedReader buReader = new BufferedReader(new FileReader("database.txt"));
+            String line;
+            String info[];
+            while((line = buReader.readLine())!=null){
+                info = line.split(",");
+                User data = new User(info[0],info[1],info[2],info[3]);
+                userSet.add(data);
+                dbTable.addRow(new Object[]{data.name,data.email,data.gender,data.dateOfBirth});
+            }
+            for(User u: userSet)
+                    System.out.println(u.email);
+            
+            Iterator<User> itr = userSet.iterator();
+            while(itr.hasNext()){
+                System.out.println(itr.next().gender);
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }*/
         
         ArrayList<User> userList = new ArrayList<User>(); // List Declaration
         
