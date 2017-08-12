@@ -26,32 +26,11 @@ public class DatabaseFrame extends JFrame {
         initComponents();
         DefaultTableModel dbTable = (DefaultTableModel)databaseTable.getModel();
         
+        ArrayList<User> userList = new ArrayList<User>(); // List Declaration
         
+        User userObj = new User();         
         
-        //ArrayList<String> arr = new ArrayList<String>();
-        /*try {
-            
-            FileReader reader = new FileReader("database.txt");
-            BufferedReader bufferedReader = new BufferedReader(reader); 
-            String line;
-            String info[];
-            while ((line = bufferedReader.readLine()) != null) {
-                //info = line.split(",");
-                //arr.add(info[0]);
-                //arr.add(info[1]);
-                //arr.add(info[2]);
-                //arr.add(info[3]);
-                //dbTable.addRow(new Object[]{arr.get(0),arr.get(1),arr.get(2),arr.get(3)});
-                dbTable.addRow(new Object[]{us.fn[0]});
-                
-            }
-            reader.close();
- 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-        
-        /*try {
+        try {
             FileReader reader = new FileReader("database.txt");
             BufferedReader bufferedReader = new BufferedReader(reader);
  
@@ -59,13 +38,25 @@ public class DatabaseFrame extends JFrame {
             String info[];
             while ((line = bufferedReader.readLine()) != null) {
                 info = line.split(",");
-                dbTable.addRow(new Object[]{info[0],info[1],info[2],info[3]});
+                
+                userObj.name = info[0];
+                userObj.email = info[1];
+                userObj.gender = info[2];
+                userObj.dateOfBirth = info[3];
+                
+                userList.add(userObj); // Adding to list
+                
+                dbTable.addRow(new Object[]{userObj.name, userObj.email, userObj.gender, userObj.dateOfBirth}); // adding from list
+                
+                System.out.println(userObj.name); // Showing names in console.. same procedure for email, gender, dateOfBirth
             }
             reader.close();
+            
+                
  
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
     /**
